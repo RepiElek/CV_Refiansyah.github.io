@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio CV - Muhammad Refiansyah Fauzi</title>
+    <style>
+        :root {
+            --bg-dark: #0b0710;
+            --bg-section-alt: #130a1c;
+            --bg-card: #1c0f2b;
+            --text-main: #dfd5e8;
+            --text-muted: #a494b8;
+            --accent-primary: #b388ff;
+            --accent-secondary: #7e57c2;
+            --accent-hover: #d1c4e9;
+            --border-color: #382252;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 7, 16, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 100px 10%; 
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bg-alt {
+            background-color: var(--bg-section-alt);
+        }
+
+        /* Hero / Header Section */
+        #beranda {
+            min-height: 100vh;
+            text-align: center;
+            align-items: center;
+        }
+
+        /* Foto Profil Styling */
+        .profile-img-container {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-primary);
+            box-shadow: 0 0 25px rgba(179, 136, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(179, 136, 255, 0.5);
+        }
+
+        h1 {
+            color: var(--accent-primary);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: var(--bg-card);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Typography & Content styling */
+        h2 {
+            color: var(--accent-primary);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-secondary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        p.summary-text {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Card Layout */
+        .card-container {
+            display: grid;
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(126, 87, 194, 0.2);
+            border-color: var(--accent-secondary);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+
+        .card-subtitle {
+            font-style: italic;
+            color: var(--accent-primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .card-badge {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            background-color: var(--accent-secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .card p {
+            text-align: justify;
+            color: var(--text-muted);
+        }
+
+        /* List dan Keterampilan */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .skill-box {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-box h3 {
+            color: var(--accent-hover);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .skill-box ul {
+            list-style-type: none;
+        }
+
+        .skill-box li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-box li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            nav { display: none; } 
+            h1 { font-size: 2.2rem; }
+            .profile-img { width: 140px; height: 140px; }
+            section { padding: 80px 5%; }
+            .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .card-badge { align-self: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#ringkasan">Profil</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#proyek">Proyek</a>
+        <a href="#keterampilan">Keterampilan</a>
+    </nav>
+
+    <!-- Section 1: Hero / Beranda -->
+    <section id="beranda">
+        <!-- Tempat Foto Profil -->
+        <div class="profile-img-container">
+            <!-- Ganti 'foto-profil.jpg' dengan nama file fotomu -->
+            <img src="fotoku.png" alt="Foto Muhammad Refiansyah Fauzi" class="profile-img">
+        </div>
+
+        <h1>Muhammad Refiansyah Fauzi</h1>
+        <div class="hero-subtitle">Web Developer & UI/UX Designer</div>
+        
+        <div class="contact-grid">
+            <div class="contact-item">📍 Nganjuk, Jawa Timur</div>
+            <div class="contact-item">📞 +62 857 8478 4735</div>
+            <div class="contact-item">✉️ <a href="mailto:refiansyah1302@gmail.com">refiansyah1302@gmail.com</a></div>
+            <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/muhammad-fauzi-9aa996446/" target="_blank">LinkedIn Profile</a></div>
+        </div>
+    </section>
+
+    <!-- Section 2: Ringkasan -->
+    <section id="ringkasan" class="bg-alt">
+        <h2>Ringkasan Profesional</h2>
+        <p class="summary-text">
+            Mahasiswa D4 program studi Teknik Informatika Politeknik Negeri Jember PSDKU Nganjuk yang memiliki minat kuat di bidang Web Development dan Marketing. Memiliki pengalaman dalam desain UI/UX dengan rekam jejak yang baik dalam efisiensi waktu. Saya memiliki antusias untuk memberikan kontribusi dan terus belajar dalam lingkungan kerja.
+        </p>
+    </section>
+
+    <!-- Section 3: Pendidikan -->
+    <section id="pendidikan">
+        <h2>Pendidikan</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Politeknik Negeri Jember (PSDKU Nganjuk)</span>
+                    <span class="card-badge">Juli 2025 - Sekarang</span>
+                </div>
+                <span class="card-subtitle">Mahasiswa D4 Teknik Informatika | Nganjuk</span>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">SMA Negeri 1 Tanjunganom</span>
+                    <span class="card-badge">Juni 2022 - Mei 2025</span>
+                </div>
+                <span class="card-subtitle">Nganjuk, Jawa Timur</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Pengalaman Kerja -->
+    <section id="pengalaman" class="bg-alt">
+        <h2>Pengalaman Kerja</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Manajemen</span>
+                    <span class="card-badge">September 2022 - April 2026</span>
+                </div>
+                <span class="card-subtitle">Refi Frozen Food | Nganjuk</span>
+                <p>Membantu dalam pengelolaan produk yang ditawarkan dan melayani konsumen. Serta menganalisis laporan keuangan bulanan secara manual. Selain itu juga memberikan pelayanan terbaik untuk pelanggan dengan mengutamakan keramahan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Pengalaman Proyek -->
+    <section id="proyek">
+        <h2>Pengalaman Proyek</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Pengembangan "SI-KESA"</span>
+                </div>
+                <span class="card-subtitle">UI/UX Designer</span>
+                <p>Merancang tampilan aplikasi SI-KESA sesuai dengan URS (User Requirement Specification) yang diberikan oleh Project Manager.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Pengembangan "SI-KESA"</span>
+                </div>
+                <span class="card-subtitle">Front-End Developer</span>
+                <p>Melakukan coding tampilan untuk bagian guru pada website "SI-KESA". Mengidentifikasi dan memperbaiki error yang muncul saat sistem berjalan.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Aplikasi "Refi Frozen Food"</span>
+                </div>
+                <span class="card-subtitle">Project Manager</span>
+                <p>Membantu dalam perancangan serta pembuatan aplikasi. Melakukan pengambilan data dan wawancara secara langsung dengan pemilik mitra Refi Frozen Food untuk menganalisis kebutuhan sistem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Keterampilan -->
+    <section id="keterampilan" class="bg-alt">
+        <h2>Keterampilan</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <h3>💻 Hard Skills</h3>
+                <ul>
+                    <li><strong>Development:</strong> Flutter, Dart, HTML, CSS, JavaScript, PHP, Tailwind CSS</li>
+                    <li><strong>UI/UX Design:</strong> Figma</li>
+                    <li><strong>Tools:</strong> Microsoft Office, Trello, CapCut, Canva</li>
+                </ul>
+            </div>
+            
+            <div class="skill-box">
+                <h3>🤝 Soft Skills</h3>
+                <ul>
+                    <li>Manajemen Waktu</li>
+                    <li>Beradaptasi dengan cepat</li>
+                    <li>Berkomunikasi cukup baik</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3>🌐 Bahasa</h3>
+                <ul>
+                    <li>Indonesia (Aktif/Native)</li>
+                    <li>Inggris (Pasif)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Refiansyah Fauzi. Dibuat untuk keperluan portofolio profesional.</p>
+    </footer>
+
+</body>
+</html>
